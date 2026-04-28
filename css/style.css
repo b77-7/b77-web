@@ -1,0 +1,355 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    color: black;
+    background-color: white;
+}
+
+/* HEADER superpuesto con transparencia real */
+
+.header {
+    position: absolute;   /* importante */
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 85px;
+    padding: 0 40px;
+
+    background-color: rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(4px);
+    z-index: 10;
+}
+
+/* MENÚ */
+
+nav ul {
+    list-style: none;
+    display: flex;              /* ESTO HACE QUE SEA HORIZONTAL */
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+nav {
+    display: flex;
+    gap: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: opacity 0.3s ease;
+}
+
+nav a:hover {
+    opacity: 0.5;
+}
+
+.logo img {
+    width: 200px;   /* Ajustá acá si lo querés más grande */
+    height: 45;
+}
+
+/* =========================
+   HERO (HOME)
+========================= */
+
+.hero {
+    height: 100vh;
+    background-image: url("../img/hero.jpg");
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;  /* lo manda a la izquierda */
+    text-align: center;
+
+    position: relative;  /* importante */
+}
+
+.hero h1 {
+    font-size: 28px;
+    font-weight: 400;
+}
+
+/* =========================
+   MANIFIESTO (HOME ABAJO)
+========================= */
+
+.manifiesto {
+    background-color: #d9d5cf;
+    padding: 100px 10%;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.8;
+    
+     display: flex;
+    flex-direction: column;
+}
+
+.instagram-home {
+    margin-top: 40px;
+    text-align: left;
+    font-size: 18px;
+}
+
+.instagram-bottom {
+    margin-top: 80px;
+    font-size: 14px;
+     align-self: flex-start;  /* si en el futuro usamos flex */
+}
+
+.instagram-fixed {
+    position: fixed;
+    bottom: 30px;
+    left: 40px;
+    font-size: 14px;
+}
+
+body.origen-page {
+    background-color: rgba(0, 0, 0, 0.09);   /* color fondo origen */
+}
+
+
+/* =========================
+   CONTACTO PAGE
+========================= */
+
+.contacto-page {
+    min-height: 100vh;
+    padding: 120px 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contacto-texto {
+    max-width: 500px;   /* achica el ancho del texto */
+    text-align: 0 auto 60px auto;    /* lo centra */
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 60px;
+}
+
+.contacto-page h1 {
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+}
+
+.whatsapp-btn {
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 12px 30px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    background-color: black;
+    color: white;
+}
+
+/* ============================= */
+/* ORIGEN GALLERY EDITORIAL */
+/* ============================= */
+
+.origen-hero {
+    height: 100vh;
+    background-image: url("../img/sobre-bg.jpeg"); /* tu imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+/* Capa suave para que el texto se lea mejor */
+
+.origen-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.5); /* 0.5 ajustá opacidad */
+}
+
+.origen-gallery {
+    margin-top: 140px;
+    padding: 0 18px 100px 18px;
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 4px; /* espacio mínimo entre imágenes */
+}
+
+.origen-text {
+    grid-column: 1 / -1; /* ocupa todo el ancho */
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+/* Imágenes */
+
+.origen-gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.origen-gallery img:nth-of-type(1),
+.origen-gallery img:nth-of-type(2) {
+    grid-column: span 3;
+}
+
+.origen-gallery img:nth-of-type(3) {
+    grid-column: span 2;
+}
+
+.origen-gallery img:nth-of-type(4) {
+    grid-column: span 4;
+}
+
+.origen-gallery img:nth-of-type(5),
+.origen-gallery img:nth-of-type(6) {
+    grid-column: span 3;
+}
+
+.origen-gallery img:nth-of-type(7) {
+    grid-column: span 2;
+}
+
+.origen-gallery img:nth-of-type(8) {
+    grid-column: span 4;
+}
+
+.origen-gallery img:nth-of-type(9) {
+    grid-column: span 6;
+}
+
+/* ============================= */
+/* CONTACTO */
+/* ============================= */
+
+.contacto-hero {
+    height: 100vh;
+    background-image: url("../img/contacto-bg.jpg");
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.contacto-content {
+    text-align: center;
+}
+
+.boton-whatsapp {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    border: 1px solid black;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+/* ============================= */
+/* PIEZAS */
+/* ============================= */
+
+.piezas-hero {
+    height: 100vh;
+    background-image: url("../img/piezas-bg.png");
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.piezas-hero h1 {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+/* ============================= */
+/* SOBRE PAGE */
+/* ============================= */
+
+.sobre-page {
+    background-color: #f2f2f2;
+}
+
+.sobre-hero {
+    height: 100vh;
+    background-image: url("../img/sobre-bg.jpeg"); /* tu imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+/* Capa suave para que el texto se lea mejor */
+
+.sobre-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.5); /* 0.5 ajustá opacidad */
+}
+
+/* Contenido */
+
+.sobre-content {
+    position: relative;
+    max-width: 600px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.8;
+    z-index: 2;
+}
+
+.sobre-content p {
+    margin-bottom: 30px;
+}
+
