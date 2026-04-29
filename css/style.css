@@ -17,13 +17,13 @@ body {
 /* HEADER superpuesto con transparencia real */
 
 .header {
-    position: absolute;   /* importante */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* ← clave */
     align-items: center;
 
     height: 85px;
@@ -54,6 +54,7 @@ nav ul li a {
 nav {
     display: flex;
     gap: 40px;
+    order: 2;
 }
 
 nav a {
@@ -61,15 +62,22 @@ nav a {
     color: black;
     font-size: 14px;
     letter-spacing: 1px;
-    transition: opacity 0.3s ease;
 }
 
 nav a:hover {
     opacity: 0.5;
 }
 
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+    order: 1;
+}
+
 .logo img {
-    width: 200px;   /* Ajustá acá si lo querés más grande */
+    width: 200px;
     height: auto;
 }
 
@@ -392,6 +400,52 @@ body.origen-page {
     /* HERO ajuste para que no lo tape */
     .hero {
         padding-top: 140px;
+    }
+
+}
+
+/* =========================
+   HAMBURGUESA
+========================= */
+
+.menu-toggle {
+    display: none;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 25px;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 20;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+
+        background-color: rgba(255,255,255,0.95);
+        padding: 20px 0;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .logo img {
+        width: 120px;
     }
 
 }
